@@ -20,7 +20,7 @@ public class App
         MyCallable task3 = new MyCallable();
         MyCallable task4 = new MyCallable();
 
-        List<Callable<String>> listTask = new ArrayList<>();
+        List<Callable<Object>> listTask = new ArrayList<>();
         listTask.add(task4);
         listTask.add(task1);
         listTask.add(task2);
@@ -33,7 +33,7 @@ public class App
             System.out.println(result.get());
         }
 
-        System.out.println("Самый быстрый поток  " + service.invokeAny(listTask));
+        System.out.println("Всего сообщений  " + service.invokeAny(listTask));
 
         service.shutdown();
     }
